@@ -1,0 +1,111 @@
+﻿<Window x:Class="Beauty.Views.ClientInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Beauty.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Row="1" Rows="7" Columns="2" 
+                     HorizontalAlignment="Center">
+            <TextBlock Text="Фамилия: "
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+            <TextBox x:Name="lastNameTextBox"
+                     Height="25"
+                     Width="270"
+                     Text="{Binding LastName}"
+                     FontSize="16"
+                     VerticalContentAlignment="Center"/>
+            <TextBlock Text="Имя: "
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+            <TextBox x:Name="firstNameTextBox"
+                     Height="25"
+                     Width="270"
+                     Text="{Binding FirstName}"
+                     FontSize="16"
+                     VerticalContentAlignment="Center"/>
+            <TextBlock Text="Отчество: "
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+            <TextBox x:Name="patronymicTextBox"
+                     Height="25"
+                     Width="270"
+                     Text="{Binding Patronymic}"
+                     FontSize="16"
+                     VerticalContentAlignment="Center"/>
+            <TextBlock Text="Дата рождения: "
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+            <DatePicker x:Name="birthdayDatePicker"
+                        SelectedDate="{Binding Birthday}"
+                        Height="25"
+                        Width="270"
+                        VerticalContentAlignment="Center"/>
+            <TextBlock Text="Email: "
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+            <TextBox x:Name="emailTextBox"
+                     Height="25"
+                     Width="270"
+                     Text="{Binding Email}"
+                     FontSize="16"
+                     VerticalContentAlignment="Center"/>
+            <TextBlock Text="Телефон: "
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+            <TextBox x:Name="phoneTextBox"
+                     Height="25"
+                     Width="270"
+                     Text="{Binding Phone}"
+                     FontSize="16"
+                     VerticalContentAlignment="Center"/>
+            <TextBlock Text="Телефон: "
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+            <ComboBox x:Name="genderComboBox"
+                      Height="25"
+                      Width="270"                         
+                      FontSize="16"
+                      VerticalContentAlignment="Center"
+                      IsEditable="True"
+                      DisplayMemberPath="Name"
+                      SelectedItem="{Binding Gender}"/>
+        </UniformGrid>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <Button x:Name="saveDataButton"
+                    Content="Сохранить"
+                    Foreground="black"
+                    FontSize="18"
+                    Height="40"
+                    Width="150"
+                    Click="saveDataButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="Отменить"
+                    Foreground="black"
+                    FontSize="18"
+                    Height="40"
+                    Width="150"
+                    Margin="100,0,0,0"
+                    />
+        </StackPanel>
+    </Grid>
+</Window>
